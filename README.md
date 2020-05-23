@@ -39,6 +39,7 @@ for city in cities:
         print(f'Missing data in city number {number} of {len(cities)}. | Skipping {city}')
         number = number + 1
 ```
+Temperature vs Latitude Example
 ```
 temps = weather_df["Temperature"]
 
@@ -49,4 +50,19 @@ plt.title("City Latitude vs. Temperature")
 plt.xlabel("Latitude")
 plt.ylabel("Temperature")
 plt.savefig('../output_data/NG_temp.png')
+```
+Northern Hemisphere - Max Temp vs. Latitude Linear Regression
+```
+x_values = northern_df["Latitude"]
+y_values = northern_df["Temperature"]
+
+plt.scatter(x_values, y_values, marker="o", facecolors="red", edgecolors="black")
+plt.plot(x_values, line_reg(x_values, y_values),"b-")
+plt.annotate(line_eq(x_values, y_values),(10,240),fontsize=15,color="red")
+plt.title("Northern Hemisphere - Max Temp vs. Latitude Linear Regression")
+plt.xlabel("Latitude")
+plt.ylabel("Temperature")
+print(f"The r-squared is: {r_value(x_values, y_values)}")
+plt.show()
+The r-squared is: -0.8429321063481434
 ```
