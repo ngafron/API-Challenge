@@ -4,6 +4,16 @@ Description
 - Utilizing Pandas and OpenWeatherMap API, I created a representative model of weather across over 500 world cities. I was tasked with creating visulations for relationships about...
 
 1. Temperative vs. Latitude
+```temps = weather_df["Temperature"]
+
+x_axis = weather_df["Latitude"]
+
+plt.scatter(x_axis, temps, marker="o", facecolors="red", edgecolors="black")
+plt.title("City Latitude vs. Temperature")
+plt.xlabel("Latitude")
+plt.ylabel("Temperature")
+plt.savefig('../output_data/NG_temp.png')
+```
 2. Humidity vs. Latitude
 3. Cloudiness vs. Latitude
 4. Wind Speed vs. Latitude
