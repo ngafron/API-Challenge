@@ -11,7 +11,7 @@ Description
 Further analysing them based off of using their hemisphere attritube as a correlation. 
 
 
-url = "http://api.openweathermap.org/data/2.5/weather?"
+```url = "http://api.openweathermap.org/data/2.5/weather?"
 query_url = url + "appid=" + weather_api_key + "&q="
 city_names = []
 lat = []
@@ -38,3 +38,4 @@ for city in cities:
     except KeyError:
         print(f'Missing data in city number {number} of {len(cities)}. | Skipping {city}')
         number = number + 1
+```
